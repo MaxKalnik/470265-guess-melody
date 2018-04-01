@@ -1,13 +1,11 @@
-'use strict';
-
 (function () {
   const Keycodes = {
     LEFT: 37,
     RIGHT: 39
   };
-  const templatesFragment = document.querySelector('#templates').content;
-  const screens = templatesFragment.querySelectorAll('.main');
-  const sectionMain = document.querySelector('.main');
+  const templatesFragment = document.querySelector(`#templates`).content;
+  const screens = [...templatesFragment.querySelectorAll(`.main`)];
+  const sectionMain = document.querySelector(`.main`);
 
   sectionMain.appendChild(screens[0]);
 
@@ -28,10 +26,10 @@
   };
 
   let keydownHandler = (evt) => {
-    if(evt.keyCode === Keycodes.LEFT && evt.altKey) {
+    if (evt.keyCode === Keycodes.LEFT && evt.altKey) {
       switchScreen.previous();
     }
-    if(evt.keyCode === Keycodes.RIGHT && evt.altKey) {
+    if (evt.keyCode === Keycodes.RIGHT && evt.altKey) {
       switchScreen.next();
     }
   };

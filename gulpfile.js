@@ -49,10 +49,10 @@ gulp.task('scripts', function () {
 
 gulp.task('test', function () {
   return gulp
-    .src(['js/**/.test.js'], {read:false})
+    .src(['js/**/*.test.js'], {read:false})
     .pipe(mocha({
       compilers: ['js:babel-register'],
-      reporters: 'spec'
+      reporter: 'spec'
     }));
 });
 

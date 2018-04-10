@@ -1,21 +1,12 @@
 import utils from '../utils.js';
 
 const showResult = (othersPoints, playerData) => {
-  if (!Array.isArray(othersPoints) || typeof playerData !== `object` || (playerData.notesLeft !== 0 && !playerData.notesLeft) || (playerData.timeLeft !== 0 && !playerData.timeLeft)) {
-    return -1;
+  if (!Array.isArray(othersPoints)) {
+    throw new Error(`Incorrect value`);
   }
-  let isError = false;
   const ratings = [...othersPoints];
-  ratings.forEach((elem) => {
-    if (typeof elem !== `number`) {
-      isError = true;
-    }
-  });
   if (!utils.checkIsInRange(playerData.points, 0, 20) || !utils.checkIsInRange(playerData.notesLeft, 0, 4) || playerData.timeLeft < 0) {
-    isError = true;
-  }
-  if (isError) {
-    return -1;
+    throw new Error(`Incorrect value`);
   }
   if (playerData.notesLeft > 0 && playerData.timeLeft > 0) {
     ratings.push(playerData.points);

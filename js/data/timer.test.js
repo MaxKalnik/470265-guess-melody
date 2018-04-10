@@ -5,15 +5,6 @@ const tmr = initTimer(120);
 const tmrOne = initTimer(1);
 
 describe(`createTimer function`, () => {
-  it(`should return -1 when there's no parameter`, () => {
-    assert.equal(-1, initTimer());
-  });
-  it(`should return -1 when parameter is NaN`, () => {
-    assert.equal(-1, initTimer(true));
-  });
-  it(`should return -1 when parameter is negative number`, () => {
-    assert.equal(-1, initTimer(-4));
-  });
   it(`should return an object`, () => {
     assert.equal(`object`, typeof initTimer(120));
   });

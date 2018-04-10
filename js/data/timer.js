@@ -2,9 +2,6 @@ import utils from '../utils.js';
 
 const LOSE_MESSAGE_TIME = `К сожалению время закончилось!`;
 const initTimer = (performanceTime) => {
-  if (typeof performanceTime !== `number` || performanceTime < 0) {
-    return -1;
-  }
   return {
     secondsLeft: performanceTime,
     tick() {

@@ -1,8 +1,5 @@
 const QUICK_BREAKPOINT = 30;
 const calculatePoints = (answersArr) => {
-  if (!Array.isArray(answersArr)) {
-    throw new Error(`Incorrect value`);
-  }
   const answers = [...answersArr];
   let result = 0;
 

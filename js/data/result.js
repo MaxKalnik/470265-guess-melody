@@ -1,9 +1,6 @@
 import utils from '../utils.js';
 
 const showResult = (othersPoints, playerData) => {
-  if (!Array.isArray(othersPoints)) {
-    throw new Error(`Incorrect value`);
-  }
   const ratings = [...othersPoints];
   if (!utils.checkIsInRange(playerData.points, 0, 20) || !utils.checkIsInRange(playerData.notesLeft, 0, 4) || playerData.timeLeft < 0) {
     throw new Error(`Incorrect value`);
